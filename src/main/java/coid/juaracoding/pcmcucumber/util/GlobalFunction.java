@@ -21,6 +21,7 @@ public class GlobalFunction {
     public static int testCount = 0;
     public static int countOutline = 1;
     public static String rootProject = System.getProperty("user.dir");
+    public static String extendReportName = "sociola-report";
 
     public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());

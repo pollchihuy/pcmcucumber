@@ -20,11 +20,17 @@
     <!--    command buat run maven -> mvn clean compile assembly:single-->
     <dependencies>
 
-        <!-- https://mvnrepository.com/artifact/com.github.javafaker/javafaker -->
+        <!-- https://mvnrepository.com/artifact/com.github.romankh3/image-comparison -->
         <dependency>
             <groupId>com.github.romankh3</groupId>
             <artifactId>image-comparison</artifactId>
             <version>4.4.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org</groupId>
+            <artifactId>opencv</artifactId>
+            <version>4.6.0</version>
         </dependency>
 
         <!-- https://mavenlibs.com/maven/dependency/net.sourceforge.tess4j/tess4j -->

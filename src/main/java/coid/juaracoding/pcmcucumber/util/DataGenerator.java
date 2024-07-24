@@ -224,7 +224,7 @@ public class DataGenerator {
         while(!isValid){
             try{
                 alamat = faker.address().fullAddress();
-                matcher = Pattern.compile("^[\\w\\s\\.?\\,?]{30,255}$").matcher(alamat);
+                matcher = Pattern.compile("^[\\w\\s\\.?\\,?]{40,255}$").matcher(alamat);
                 isValid = matcher.find();
                 if(intLoop==250){
                     System.out.println("SUDAH MENCOBA MEMBUAT DATA Alamat SEBANYAK 15 KALI DAN GAGAL !!");

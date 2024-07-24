@@ -1,17 +1,18 @@
 package coid.juaracoding.pcmcucumber;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import coid.juaracoding.pcmcucumber.util.OpenCVFunction;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        /** example compare image */
+//        String filename1 = "D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal.png";
+//        String filename2 = "D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal.png";
+//        String filename2 = "D:\\download-automation\\gambar-180-abu-abu.png";
+//        System.out.println(ManipulateImage.compareImage(filename1,filename2));
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        OpenCVFunction.rotateImage("D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal.png",
+                "D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal-rot-90.png",
+                90);
+        OpenCVFunction.loadLibraries();
     }
 }

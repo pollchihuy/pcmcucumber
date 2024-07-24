@@ -1,4 +1,4 @@
-package coid.juaracoding.pcmcucumber.impl.login;
+package coid.juaracoding.pcmcucumber.impl.sociola.login;
 
 import coid.juaracoding.pcmcucumber.connection.DriverSingleton;
 import coid.juaracoding.pcmcucumber.scenariomapping.LoginTesting;
@@ -15,13 +15,13 @@ import java.io.IOException;
 public class LoginOutlineHooks {
 	public static WebDriver driver;
 	public static ExtentTest extentTest;
-	public static ExtentReports reports = new ExtentReports(GlobalFunction.rootProject+"/practiceautomation-report/extentreport/login.html");
+	public static ExtentReports reports = new ExtentReports(GlobalFunction.rootProject+"/"+GlobalFunction.extendReportName +"-main/extentreport/login.html");
 	private static LoginTesting[] tests = LoginTesting.values();
-	private static final int[] DATA_OUTLINE = {1,1,20,1};
+	private static final int[] DATA_OUTLINE = {1};
 	private String testReport = "";
 	
 	@Before
-	public void setUp() {		
+	public void setUp() {
 		DriverSingleton.getInstance(Constants.FIREFOX);
 		driver = DriverSingleton.getDriver();
 		testReport = tests[GlobalFunction.testCount].getTestName();
@@ -37,7 +37,7 @@ public class LoginOutlineHooks {
 	@AfterStep
 	public void getResultStatus(Scenario scenario) throws IOException {
 		if(scenario.isFailed()) {
-			String screenshotPath = GlobalFunction.getScreenshot(driver, "PTA_LoginOutlineHooks"+scenario.getName().replace(" ", "_"));
+			String screenshotPath = GlobalFunction.getScreenshot(driver, GlobalFunction.extendReportName +scenario.getName().replace(" ", "_"));
 			extentTest.log(LogStatus.FAIL, scenario.getName()+"\n"
 					+extentTest.addScreenCapture(screenshotPath));;
 		}
