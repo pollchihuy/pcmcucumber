@@ -39,6 +39,7 @@ public class OpenCVFunction {
         }
     }
 
+    /** Fungsi Rotate untuk ClockWise */
     public static void rotateImage(String pathSource, String pathDestiny, int rotateAngle) {
         loadLibraries();
         String file = pathSource;
@@ -54,6 +55,32 @@ public class OpenCVFunction {
         } else if (angle == 270 || angle == -90) {
             Core.rotate(src, dst,
                     Core.ROTATE_90_COUNTERCLOCKWISE);
+        } else {
+            Point rotPoint = new Point((src.cols() / 2.0), (src.rows() / 2.0));
+            Mat rotMat = Imgproc.getRotationMatrix2D(rotPoint, angle, 1);
+            Imgproc.warpAffine(src, dst, rotMat, src.size(),
+                    Imgproc.WARP_INVERSE_MAP);
+        }
+        Imgcodecs.imwrite(pathDestiny, dst);
+        System.out.println("Image Rotated Successfully");
+    }
+
+    /** Fungsi Rotate untuk Counter ClockWise */
+    public static void rotateImage(String pathSource, String pathDestiny, int rotateAngle,String isCounter) {
+        loadLibraries();
+        String file = pathSource;
+        Mat src = Imgcodecs.imread(file);
+
+        Mat dst = new Mat();
+        double angle = rotateAngle;
+
+        if (angle == 90 || angle == -270) {
+            Core.rotate(src, dst, Core.ROTATE_90_COUNTERCLOCKWISE);
+        } else if (angle == 180 || angle == -180) {
+            Core.rotate(src, dst, Core.ROTATE_180);
+        } else if (angle == 270 || angle == -90) {
+            Core.rotate(src, dst,
+                    Core.ROTATE_90_CLOCKWISE);
         } else {
             Point rotPoint = new Point((src.cols() / 2.0), (src.rows() / 2.0));
             Mat rotMat = Imgproc.getRotationMatrix2D(rotPoint, angle, 1);

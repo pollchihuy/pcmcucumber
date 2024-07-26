@@ -1,5 +1,6 @@
 package coid.juaracoding.pcmcucumber.impl.sociola.login;
 
+import coid.juaracoding.pcmcucumber.config.ContohConfig;
 import coid.juaracoding.pcmcucumber.page.sociola.SCHomePage;
 import coid.juaracoding.pcmcucumber.page.sociola.SCLoginPage;
 import coid.juaracoding.pcmcucumber.page.sociola.SCRegisterPage;
@@ -48,7 +49,8 @@ public class InputRegisterPositif {
 
     @When("TC0111 Mengakses Halaman Website")
     public void tc0111_mengakses_halaman_website(){
-        this.driver.get(Constants.URL_LOGIN);
+//        this.driver.get(Constants.URL_LOGIN);
+        this.driver.get(ContohConfig.getUrl());
         extentTest.log(LogStatus.PASS, "TC0111 Mengakses Halaman Website");
     }
     @And("TC0111 Mengkosongkan Field Untuk Login")
@@ -57,6 +59,7 @@ public class InputRegisterPositif {
         scLoginPage.getTxtFieldUsername().clear();
         extentTest.log(LogStatus.PASS, "TC0111 Mengkosongkan Field Untuk Login");
     }
+    
     @And("TC0111 Input Username Valid")
     public void tc0111_input_username_valid(){
         scLoginPage.getTxtFieldUsername().sendKeys("admintiara2");

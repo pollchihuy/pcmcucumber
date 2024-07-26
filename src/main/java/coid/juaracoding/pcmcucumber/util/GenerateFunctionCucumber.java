@@ -118,6 +118,7 @@ public class GenerateFunctionCucumber {
                 "@And",
                 "@Then"
         };
+
         String [] strFunction = {
                 "TC0141 Mengakses Halaman Website       ",
                 "TC0141 Mengkosongkan Field Untuk Login      ",

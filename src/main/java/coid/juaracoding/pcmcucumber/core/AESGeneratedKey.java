@@ -12,9 +12,6 @@ public class AESGeneratedKey {
     public static void main(String[] args) throws NoSuchAlgorithmException {
         // Tambahkan Bouncy Castle Provider
         Security.addProvider(new BouncyCastleProvider());
-//        java -DDB_USR=fb197a1427f46c1e47b3e890659709b3 -DDB_PWD=d5a93ddf6190563dee463f94f268bbbf
-//        -DDB_URL=jdbc:h2:C:/data/sqa -DSERVER_PORT=8095 -jar ujian-selenium.jar
-
         try {
             // Inisialisasi generator kunci AES dengan Bouncy Castle
             KeyGenerator keyGen = KeyGenerator.getInstance("AES", "BC");

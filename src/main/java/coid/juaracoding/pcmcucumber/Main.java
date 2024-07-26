@@ -7,6 +7,8 @@ import java.net.URISyntaxException;
 
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
+        
+        
         /** example compare image */
 //        String filename1 = "D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal.jpg";
 //        String filename2 = "D:\\SQA-Batch-16\\pcmcucumber\\src\\main\\resources\\data\\gambar-awal.jpg";

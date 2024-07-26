@@ -13,7 +13,6 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WindowType;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.text.SimpleDateFormat;
@@ -42,7 +41,7 @@ public class VerifikasiPositif {
     private SCImageOnline scImageOnline;
     private Random random;
     private String parentWindow ;
-    private String childWindow ;
+    private String childWindow1;
     private String strLinkTransaksi1;
     private String pathRootDownload ;
     private String fileDownloadTransaksi1;
@@ -63,7 +62,7 @@ public class VerifikasiPositif {
     @When("TC0141 Mengakses Halaman Website")
     public void tc0141_mengakses_halaman_website(){
         this.driver.get(Constants.URL_LOGIN);
-        parentWindow = driver.getWindowHandle();
+        parentWindow = driver.getWindowHandle();// missal : id parent windows -> x903347
         extentTest.log(LogStatus.PASS, "TC0141 Mengakses Halaman Website");
     }
     @And("TC0141 Mengkosongkan Field Untuk Login")
@@ -119,15 +118,16 @@ public class VerifikasiPositif {
     }
     @And("TC0141 Switch Ke Tab Baru")
     public void tc0141_switch_ke_tab_baru(){
-        /** sebenar nya ini bugs, ketika menekan tombol view pada record yang di search ditampilkan ke tab selanjutnya
+        /** ketika menekan tombol view pada record yang di search ditampilkan ke tab selanjutnya
          * tapi bisa di cover dengan fungsional berikut , sehingga cursor pindah ke tab yang akan kita olah nantinya....
          */
         Set<String> allWindowHandles = driver.getWindowHandles();
+
         Iterator<String> i1 = allWindowHandles.iterator();
         while (i1.hasNext()){
-            childWindow = i1.next();
-            if(!parentWindow.equals(childWindow)){
-                driver.switchTo().window(childWindow);
+            childWindow1 = i1.next();// value childWindow1 saat looping pertama -> 44zs78d
+            if(!parentWindow.equals(childWindow1)){ // x903347.equals(44zs78d)
+                driver.switchTo().window(childWindow1);
             }
         }
         extentTest.log(LogStatus.PASS, "TC0141 Switch Ke Tab Baru");
@@ -142,6 +142,7 @@ public class VerifikasiPositif {
         scVerifikasiPage.getBtnRotate90FotoBuktiTransaksi1().click();
         extentTest.log(LogStatus.PASS, "TC0141 Klik Tombol Rotasi90 Foto Bukti Transaksi1");
     }
+    
     @And("TC0141 Download Hasil Rotasi90 Foto Bukti Transaksi1")
     public void tc0141_download_hasil_rotasi90_foto_bukti_transaksi1(){
         /** Link ini disiapkan sebelumnya kalau mau menggunakan data driven */
@@ -165,7 +166,7 @@ public class VerifikasiPositif {
 //        System.out.println("Path Gambar Asli : "+strPathGambarAsli);
         OpenCVFunction.rotateImage(strPathGambarAsli,
                 fileRotate90Transaksi1,
-        90);
+        90,null);
         extentTest.log(LogStatus.PASS, "TC0141 Rotasi Gambar Asli Foto Bukti Transaksi1");
     }
 
@@ -187,10 +188,9 @@ public class VerifikasiPositif {
             Assert.assertEquals("a","b","Hasil Membandingkan Gambar Gagal");
             return;
         }
-        double doResult = Double.parseDouble(strResult);
+        double doResult = Double.parseDouble(strResult.replace(" %",""));
         boolean isValid = doResult>90;
-        Assert.assertTrue(isValid,"Gambar tidak cocok!!");
+        Assert.assertTrue(isValid,"Gambar tidak cocok!! Tingkat Kesamaan "+doResult);
         extentTest.log(LogStatus.PASS, "TC0141 Validasi Hasilnya");
     }
-
 }
