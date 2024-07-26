@@ -101,6 +101,12 @@ public class SCVerifikasiPage {
     @FindBy(xpath = "//button[@id='btnVerifikasi']")
     private WebElement btnVerifikasi;
 
+    @FindBy(xpath = "//h1[normalize-space()='List Data Register']")
+    private WebElement labelPageVerifikasi;
+
+    @FindBy(xpath = "/html/body/div[1]/div[1]/section[2]/div[1]/form/div/div[2]/div/div[2]/div[1]/img")
+    private WebElement imageGambar;
+
     public SCVerifikasiPage(WebDriver driver) {
         this.driver= driver;
         PageFactory.initElements(driver,this);
@@ -254,5 +260,17 @@ public class SCVerifikasiPage {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
                 .until(ExpectedConditions.visibilityOf(btnVerifikasi));
+    }
+
+    public WebElement getLabelPageVerifikasi() {
+        GlobalFunction.delay(Constants.TIMEOUT_DELAY);
+        return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
+                .until(ExpectedConditions.visibilityOf(labelPageVerifikasi));
+    }
+
+    public WebElement getImageGambar() {
+        GlobalFunction.delay(Constants.TIMEOUT_DELAY);
+        return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
+                .until(ExpectedConditions.visibilityOf(imageGambar));
     }
 }

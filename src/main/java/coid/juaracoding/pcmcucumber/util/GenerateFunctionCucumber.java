@@ -13,7 +13,8 @@ public class GenerateFunctionCucumber {
 
     public static void main(String[] args) {
 //        generateLoginPositif();
-        generateInputRegistrasiPositif();
+//        generateInputRegistrasiPositif();
+        generateVerifikasiPositif();
     }
 
     public static void  generateLoginPositif(){
@@ -86,6 +87,53 @@ public class GenerateFunctionCucumber {
                 "TC0111 Upload Foto Bukti Transaksi3    ",
                 "TC0111 Menekan Tombol Submit Data    ",
                 "TC0111 Mengkosongkan Field Untuk Login    "
+
+
+        };
+
+        for (int i = 0; i < strFunction.length; i++) {
+            String strFunctionz = strFunction[i].trim();
+            System.out.println(strPrefix[i]+"(\""+strFunctionz+"\")");
+            System.out.println("public void "+strFunctionz.replace(" ","_").toLowerCase()+"(){\n");
+            System.out.println("extentTest.log(LogStatus.PASS, \""+strFunctionz+"\");");
+            System.out.println("}");
+        }
+    }
+
+    public static void  generateVerifikasiPositif(){
+        String [] strPrefix = {
+                "@When",
+                "@And",
+                "@And",
+                "@And",
+                "@And",
+                "@Then",
+                "@When",
+                "@And",
+                "@And",
+                "@And",
+                "@And",
+                "@And",
+                "@And",
+                "@And",
+                "@Then"
+        };
+        String [] strFunction = {
+                "TC0141 Mengakses Halaman Website       ",
+                "TC0141 Mengkosongkan Field Untuk Login      ",
+                "TC0141 Input Username Valid       ",
+                "TC0141 Input Password Valid       ",
+                "TC0141 Menekan Tombol Login       ",
+                "TC0141 Validasi Halaman Home       ",
+                "TC0141 Memilih Menu Verifikasi       ",
+                "TC0141 Melakukan Searching Data       ",
+                "TC0141 Menekan Tombol Aksi       ",
+                "TC0141 Switch Ke Tab Baru      ",
+                "TC0141 Klik Tombol Rotasi90 Foto Bukti Transaksi1    ",
+                "TC0141 Download Hasil Rotasi90 Foto Bukti Transaksi1    ",
+                "TC0141 Rotasi Gambar Asli Foto Bukti Transaksi1    ",
+                "TC0141 Compare Kedua Gambar Hasil Rotasi90 Transaksi1 Ke Website Image Online",
+                "TC0141 Validasi Hasilnya        "
 
 
         };

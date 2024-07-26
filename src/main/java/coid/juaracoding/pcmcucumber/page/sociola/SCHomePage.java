@@ -14,10 +14,10 @@ import java.time.Duration;
 public class SCHomePage {
 
     private WebDriver driver;
-    @FindBy(xpath = "//a[@class='nav-link active']")
+    @FindBy(xpath = "//p[normalize-space()='Register']")
     private WebElement btnMenuRegister;
 
-    @FindBy(xpath = "//a[@class='nav-link active']")
+    @FindBy(xpath = "//p[normalize-space()='Verifikasi']")
     private WebElement btnMenuVerifikasi;
 
 //    @FindBy(xpath = "//strong[contains(text(),'Congratulations student. You successfully logged i')]")

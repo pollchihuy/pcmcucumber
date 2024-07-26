@@ -68,11 +68,13 @@ public class SCRegisterPage {
     @FindBy(xpath = "//input[@id='btnsubmit']")
     private WebElement btnSubmit;
 
+    @FindBy(xpath = "//h3[@class='card-title']")
+    private WebElement labelPageRegister;
+
     public SCRegisterPage(WebDriver driver) {
         this.driver= driver;
         PageFactory.initElements(driver,this);
     }
-
 
     public WebElement getBtnAddNewData() {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
@@ -157,5 +159,11 @@ public class SCRegisterPage {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
                 .until(ExpectedConditions.visibilityOf(btnSubmit));
+    }
+
+    public WebElement getLabelPageRegister() {
+        GlobalFunction.delay(Constants.TIMEOUT_DELAY);
+        return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
+                .until(ExpectedConditions.visibilityOf(labelPageRegister));
     }
 }

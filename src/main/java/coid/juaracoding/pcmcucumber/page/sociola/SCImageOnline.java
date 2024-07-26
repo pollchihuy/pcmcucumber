@@ -1,5 +1,6 @@
 package coid.juaracoding.pcmcucumber.page.sociola;
 
+import coid.juaracoding.pcmcucumber.connection.DriverSingleton;
 import coid.juaracoding.pcmcucumber.util.Constants;
 import coid.juaracoding.pcmcucumber.util.GlobalFunction;
 import org.openqa.selenium.WebDriver;
@@ -11,48 +12,53 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class SCLoginPage {
+public class SCImageOnline {
+
     private WebDriver driver;
-    @FindBy(xpath = "//input[@placeholder='Username']")
-    private WebElement txtFieldUsername;
+    @FindBy(xpath = "//input[@name='uploadfile']")
+    private WebElement uploadGambar1;
 
-    @FindBy(xpath = "//input[@placeholder='Password']")
-    private WebElement txtFieldPassword;
+    @FindBy(xpath = "//input[@name='uploadfile2']")
+    private WebElement uploadGambar2;
 
-    @FindBy(xpath = "//button[@class='login100-form-btn']")
-    private WebElement btnSubmit;
+//    @FindBy(xpath = "//strong[contains(text(),'Congratulations student. You successfully logged i')]")
+    @FindBy(xpath = "//input[@value='OK']")
+    private WebElement btnOk;
 
-    @FindBy(xpath = "//span[@class='login100-form-title p-b-41']")
-    private WebElement labelLogin;
+    @FindBy(xpath = "/html/body/div/div[4]/span")
+    private WebElement labelResult;
 
-//    @FindBy(xpath = "")
-//    private WebElement notifLoginError;
-    public SCLoginPage(WebDriver driver) {
+    public SCImageOnline() {
+        this.driver= DriverSingleton.getDriver();
+        PageFactory.initElements(driver,this);
+    }
+
+    public SCImageOnline(WebDriver driver) {
         this.driver= driver;
         PageFactory.initElements(driver,this);
     }
 
-    public WebElement getTxtFieldUsername() {
+    public WebElement getUploadGambar1() {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
-                .until(ExpectedConditions.visibilityOf(txtFieldUsername));
+                .until(ExpectedConditions.visibilityOf(uploadGambar1));
     }
 
-    public WebElement getTxtFieldPassword() {
+    public WebElement getUploadGambar2() {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
-                .until(ExpectedConditions.visibilityOf(txtFieldPassword));
+                .until(ExpectedConditions.visibilityOf(uploadGambar2));
     }
 
-    public WebElement getBtnSubmit() {
+    public WebElement getBtnOk() {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
-                .until(ExpectedConditions.visibilityOf(btnSubmit));
+                .until(ExpectedConditions.visibilityOf(btnOk));
     }
 
-    public WebElement getLabelLogin() {
+    public WebElement getLabelResult() {
         GlobalFunction.delay(Constants.TIMEOUT_DELAY);
         return new WebDriverWait(driver, Duration.ofSeconds(Constants.TIMEOUT_DELAY))
-                .until(ExpectedConditions.visibilityOf(labelLogin));
+                .until(ExpectedConditions.visibilityOf(labelResult));
     }
 }

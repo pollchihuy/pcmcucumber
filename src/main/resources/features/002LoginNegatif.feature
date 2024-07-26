@@ -12,6 +12,12 @@ Feature: Login Negatif
     And TC0021 Input Password Kosong
     And TC0021 Menekan Tombol Login
     Then TC0021 Validasi Message Error Login Kosong
+#     Examples:
+#        |username|password|alamat|nohp|email|
+#        |imam.zulkarnain|8#Z$61jQq|Jl. Jend. Sudirman No. 91, Berau, VA 94020|081232700493|umar.firmansyah@hotmail.com|
+#        |unang.setiawan|w0#B1nCgE|Apt. 361 Jl. MH. Thamrin No. 52, Soppeng, NH 07923|+628240317894|indra.handaru@gmail.com|
+#        |okta.nugraha|#QO$s3ra#lZ1|Jl. MH. Thamrin No. 17, Sorong Selatan, MO 81773|+628550209545|bambang.gautama@yahoo.com|
+
 
   Scenario: TC0022 Username Dan Password Invalid
     When TC0022 Mengakses Halaman Website
@@ -28,6 +34,12 @@ Feature: Login Negatif
     And TC0023 Input Password Invalid
     And TC0023 Menekan Tombol Login
     Then TC0023 Validasi Message Error Login Kosong
+#     Examples:
+#        |username|password|alamat|nohp|email|
+#        |imam.zulkarnain|8#Z$61jQq|Jl. Jend. Sudirman No. 91, Berau, VA 94020|081232700493|umar.firmansyah@hotmail.com|
+#        |unang.setiawan|w0#B1nCgE|Apt. 361 Jl. MH. Thamrin No. 52, Soppeng, NH 07923|+628240317894|indra.handaru@gmail.com|
+#        |okta.nugraha|#QO$s3ra#lZ1|Jl. MH. Thamrin No. 17, Sorong Selatan, MO 81773|+628550209545|bambang.gautama@yahoo.com|
+#        |okta.nugraha|#QO$s3ra#lZ1|Jl. MH. Thamrin No. 17, Sorong Selatan, MO 81773|+628550209545|bambang.gautama@yahoo.com|
 
   Scenario: TC0024 Username Empty Dan Password Invalid
     When TC0024 Mengakses Halaman Website
@@ -52,3 +64,6 @@ Feature: Login Negatif
     And TC0026 Input Password Kosong
     And TC0026 Menekan Tombol Login
     Then TC0026 Validasi Message Error Login Kosong
+    #     Examples:
+#        |username|password|alamat|nohp|email|
+#        |imam.zulkarnain|8#Z$61jQq|Jl. Jend. Sudirman No. 91, Berau, VA 94020|081232700493|umar.firmansyah@hotmail.com|

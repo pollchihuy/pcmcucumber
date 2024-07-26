@@ -10,11 +10,16 @@ import org.openqa.selenium.WebDriver;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.channels.Channels;
 import java.nio.channels.ReadableByteChannel;
+import java.nio.file.Paths;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Random;
+
+import static com.google.common.io.Resources.getResource;
 
 public class GlobalFunction {
 
@@ -22,6 +27,8 @@ public class GlobalFunction {
     public static int countOutline = 1;
     public static String rootProject = System.getProperty("user.dir");
     public static String extendReportName = "sociola-report";
+    public static DataGenerator dataGenerator ;
+    public static Random random;
 
     public static String getScreenshot(WebDriver driver, String screenshotName) throws IOException {
         String dateName = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
@@ -109,6 +116,17 @@ public class GlobalFunction {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static DataGenerator getDataGenerator(){
+        if(dataGenerator==null){
+            dataGenerator = new DataGenerator();
+        }
+        return dataGenerator;
+    }
+
+    public static String getFilePathInResources(String pathToFile) {
+        return System.getProperty("user.dir")+"\\src\\main\\resources" + pathToFile;
     }
 
 

@@ -34,77 +34,76 @@ public class LoginPositif {
     }
 
     @When("TC0011 Mengakses Halaman Website")
-    public void tc001_mengakses_halaman_website(){
+    public void tc0011_mengakses_halaman_website(){
         this.driver.get(Constants.URL_LOGIN);
-        extentTest.log(LogStatus.PASS, "TC001 Mengakses Halaman Website");
+        extentTest.log(LogStatus.PASS, "TC0011 Mengakses Halaman Website");
     }
     @And("TC0011 Mengkosongkan Field Untuk Login")
-    public void tc001_mengkosongkan_field_untuk_login(){
+    public void tc0011_mengkosongkan_field_untuk_login(){
         scLoginPage.getTxtFieldPassword().clear();
         scLoginPage.getTxtFieldUsername().clear();
-        extentTest.log(LogStatus.PASS, "TC001 Mengkosongkan Field Untuk Login");
+        extentTest.log(LogStatus.PASS, "TC0011 Mengkosongkan Field Untuk Login");
     }
     @And("TC0011 Input Username Valid")
-    public void tc001_input_username_valid(){
-        if(true){
-            isValid = false;
-            extentTest.log(LogStatus.ERROR, "TC001 Input Username Valid");
-//            extentTest.log(LogStatus.SKIP, "TC001 Input Username Valid");
-            return;
-        }
+    public void tc0011_input_username_valid(){
+//        if(true){
+//            isValid = false;
+//            extentTest.log(LogStatus.ERROR, "TC0011 Input Username Valid");
+//            return;
+//        }
         scLoginPage.getTxtFieldUsername().sendKeys("admintiara2");
-        extentTest.log(LogStatus.PASS, "TC001 Input Username Valid");
+        extentTest.log(LogStatus.PASS, "TC0011 Input Username Valid");
     }
     @And("TC0011 Input Password Valid")
-    public void tc001_input_password_valid(){
+    public void tc0011_input_password_valid(){
         if(!isValid){
-            extentTest.log(LogStatus.SKIP, "TC001 Input Password Valid");
+            extentTest.log(LogStatus.SKIP, "TC0011 Input Password Valid");
             return;
         }
         scLoginPage.getTxtFieldPassword().sendKeys("a");
-        extentTest.log(LogStatus.PASS, "TC001 Input Password Valid");
+        extentTest.log(LogStatus.PASS, "TC0011 Input Password Valid");
     }
     @And("TC0011 Menekan Tombol Login")
-    public void tc001_menekan_tombol_login(){
+    public void tc0011_menekan_tombol_login(){
         if(!isValid){
-            extentTest.log(LogStatus.SKIP, "TC001 Menekan Tombol Login");
+            extentTest.log(LogStatus.SKIP, "TC0011 Menekan Tombol Login");
             return;
         }
         scLoginPage.getBtnSubmit().click();
-        extentTest.log(LogStatus.PASS, "TC001 Menekan Tombol Login");
+        extentTest.log(LogStatus.PASS, "TC0011 Menekan Tombol Login");
     }
     @Then("TC0011 Validasi Label Sukses Di Halaman Home Page")
-    public void tc001_validasi_label_sukses_di_halaman_home_page(){
+    public void tc0011_validasi_label_sukses_di_halaman_home_page(){
         if(!isValid){
-            extentTest.log(LogStatus.SKIP, "TC001 Validasi Label Sukses Di Halaman Home Page");
+            extentTest.log(LogStatus.SKIP, "TC0011 Validasi Label Sukses Di Halaman Home Page");
             return;
         }
         String textHome = (scHomePage.getHomepageLogo()==null)?"":scHomePage.getHomepageLogo().getText();
         if(textHome.equals("")){
             isValid = false;
         }
-//        System.out.println("Text Profile -> "+textHome);
         Assert.assertTrue(textHome.contains("Selamat datang"));
-        extentTest.log(LogStatus.PASS, "TC001 Validasi Label Sukses Di Halaman Home Page");
+        extentTest.log(LogStatus.PASS, "TC0011 Validasi Label Sukses Di Halaman Home Page");
     }
     @And("TC0011 Klik Tombol Logout")
-    public void tc001_klik_tombol_logout(){
+    public void tc0011_klik_tombol_logout(){
         if(!isValid){
-            extentTest.log(LogStatus.SKIP, "TC001 Validasi Label Sukses Di Halaman Home Page");
+            extentTest.log(LogStatus.SKIP, "TC0011 Validasi Label Sukses Di Halaman Home Page");
             return;
         }
         scHomePage.getBtnLogout().click();
-        extentTest.log(LogStatus.PASS, "TC001 Klik Tombol Logout");
+        extentTest.log(LogStatus.PASS, "TC0011 Klik Tombol Logout");
     }
     @Then("TC0011 Validasi Halaman Login")
-    public void tc001_validasi_halaman_login(){
+    public void tc0011_validasi_halaman_login(){
         if(!isValid){
-            extentTest.log(LogStatus.SKIP, "TC001 Validasi Label Sukses Di Halaman Home Page");
+            Assert.assertEquals("a","b");
+            extentTest.log(LogStatus.SKIP, "TC0011 Validasi Label Sukses Di Halaman Home Page");
             return;
         }
         String strLabelLogin = scLoginPage.getLabelLogin().getText();
         Assert.assertEquals(strLabelLogin,"SOCIOLLA TUNJUNGAN SURABAYA");
-        extentTest.log(LogStatus.PASS, "TC001 Validasi Halaman Login");
+        extentTest.log(LogStatus.PASS, "TC0011 Validasi Halaman Login");
     }
 
     ///** start  - case ke 1 dari login negatif */
@@ -179,7 +178,7 @@ public class LoginPositif {
 /** end  - case ke 2 dari login negatif */
 
     /** start  - case ke 3 dari login negatif */
-    
-    
+
+
 
 }
