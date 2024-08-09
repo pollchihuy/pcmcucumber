@@ -48,13 +48,8 @@ public class LoginPositif {
     }
     @And("^TC0011 Input (.*) Valid")
     public void tc0011_input_username_valid(String username){
-//        if(true){
-//            isValid = false;
-//            extentTest.log(LogStatus.ERROR, "TC0011 Input Username Valid");
-//            return;
-//        }
+        System.out.println("user name : "+username);
         scLoginPage.getTxtFieldUsername().sendKeys("admintiara2");
-//        scLoginPage.getTxtFieldUsername().sendKeys(username);
         extentTest.log(LogStatus.PASS, "TC0011 Input Username Valid");
     }
     @And("^TC0011 Input (.*) Valids")
@@ -68,6 +63,22 @@ public class LoginPositif {
 //        scLoginPage.getTxtFieldPassword().sendKeys(password);
         extentTest.log(LogStatus.PASS, "TC0011 Input Password Valid");
     }
+//    @And("TC0011 Input Username Valid")
+//    public void tc0011_input_username_valid(){
+//        scLoginPage.getTxtFieldUsername().sendKeys("admintiara2");
+//        extentTest.log(LogStatus.PASS, "TC0011 Input Username Valid");
+//    }
+//    @And("^TC0011 Input Password Valids")
+//    public void tc0011_input_password_valids(){
+//        strEstafet = "Ini Estafet";
+//        if(!isValid){
+//            extentTest.log(LogStatus.SKIP, "TC0011 Input Password Valid");
+//            return;
+//        }
+//        scLoginPage.getTxtFieldPassword().sendKeys("a");
+////        scLoginPage.getTxtFieldPassword().sendKeys(password);
+//        extentTest.log(LogStatus.PASS, "TC0011 Input Password Valid");
+//    }
     @And("TC0011 Menekan Tombol Login")
     public void tc0011_menekan_tombol_login(){
         if(!isValid){

@@ -1,14 +1,5 @@
 package coid.juaracoding.pcmcucumber.util;
 
-/*
-IntelliJ IDEA 2024.1.4 (Ultimate Edition)
-Build #IU-241.18034.62, built on June 21, 2024
-@Author pollc a.k.a. Paul Christian
-Java Developer
-Created on Wed 07:06
-@Last Modified Wed 07:06
-Version 1.0
-*/
 public class GenerateFunctionCucumber {
 
     public static void main(String[] args) {
@@ -16,6 +7,7 @@ public class GenerateFunctionCucumber {
 //        generateInputRegistrasiPositif();
         generateVerifikasiPositif();
     }
+
 
     public static void  generateLoginPositif(){
         String [] strFunction = {
@@ -63,6 +55,7 @@ public class GenerateFunctionCucumber {
                 "@And",
                 "@Then"
         };
+
         String [] strFunction = {
                 "TC0111 Mengakses Halaman Website     ",
                 "TC0111 Mengkosongkan Field Untuk Login    ",
@@ -87,8 +80,6 @@ public class GenerateFunctionCucumber {
                 "TC0111 Upload Foto Bukti Transaksi3    ",
                 "TC0111 Menekan Tombol Submit Data    ",
                 "TC0111 Mengkosongkan Field Untuk Login    "
-
-
         };
 
         for (int i = 0; i < strFunction.length; i++) {
@@ -135,8 +126,6 @@ public class GenerateFunctionCucumber {
                 "TC0141 Rotasi Gambar Asli Foto Bukti Transaksi1    ",
                 "TC0141 Compare Kedua Gambar Hasil Rotasi90 Transaksi1 Ke Website Image Online",
                 "TC0141 Validasi Hasilnya        "
-
-
         };
 
         for (int i = 0; i < strFunction.length; i++) {

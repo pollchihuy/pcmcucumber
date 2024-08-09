@@ -9,8 +9,6 @@ Feature: Login Positif
       When TC0011 Mengakses Halaman Website
       And TC0011 Mengkosongkan Field Untuk Login
       And TC0011 Input <username> Valid
-      And TC0011 Input Username Valid
-      And TC0011 Input Password Valid
       And TC0011 Input <password> Valids
       And TC0011 Menekan Tombol Login
       Then TC0011 Validasi Label Sukses Di Halaman Home Page

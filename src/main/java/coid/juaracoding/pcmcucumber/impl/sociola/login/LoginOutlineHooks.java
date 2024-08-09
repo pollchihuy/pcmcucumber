@@ -20,8 +20,8 @@ public class LoginOutlineHooks {
 	private static final int[] DATA_OUTLINE = {
 //			Loose Coupling
 //			Tight Coupling
-			200,//TC0011 Valid Login
-//			1,//TC0021 Empty Login
+			1//TC0011 Valid Login
+//			1//TC0021 Empty Login
 //			1,//TC0022 Username Dan Password Invalid
 //			4,//TC0023 Username Valid Dan Password Invalid
 //			1,//TC0024 Username Empty Dan Password Invalid
