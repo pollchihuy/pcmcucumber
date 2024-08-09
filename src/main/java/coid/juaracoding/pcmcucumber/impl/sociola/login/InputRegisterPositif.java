@@ -21,7 +21,7 @@ import java.util.Random;
 /*
 IntelliJ IDEA 2024.1.4 (Ultimate Edition)
 Build #IU-241.18034.62, built on June 21, 2024
-@Author pollc a.k.a. Paul Christian
+@Author pollc a.k.a. Paul 
 Java Developer
 Created on Wed 20:54
 @Last Modified Wed 20:54
@@ -36,7 +36,7 @@ public class InputRegisterPositif {
     private boolean isValid = true;
     private SCRegisterPage scRegisterPage;
     private Random random ;
-
+    private int intStart;
     public InputRegisterPositif(){
         isValid = true;
         this.driver = LoginOutlineHooks.driver;
@@ -49,8 +49,8 @@ public class InputRegisterPositif {
 
     @When("TC0111 Mengakses Halaman Website")
     public void tc0111_mengakses_halaman_website(){
-//        this.driver.get(Constants.URL_LOGIN);
-        this.driver.get(ContohConfig.getUrl());
+        this.driver.get(Constants.URL_LOGIN);
+//        this.driver.get(ContohConfig.getUrl());
         extentTest.log(LogStatus.PASS, "TC0111 Mengakses Halaman Website");
     }
     @And("TC0111 Mengkosongkan Field Untuk Login")
@@ -91,23 +91,23 @@ public class InputRegisterPositif {
         scRegisterPage.getBtnAddNewData().click();
         extentTest.log(LogStatus.PASS, "TC0111 Menekan Tombol Add New Data");
     }
-    @And("TC0111 Mengisi Field Soco Id")
-    public void tc0111_mengisi_field_soco_id(){
+    @And("^TC0111 Mengisi Field (.*) Soco Id")
+    public void tc0111_mengisi_field_soco_id(Object socoid){
         scRegisterPage.getTextSocoID().sendKeys(String.valueOf(random.nextLong(1000000000L,9999999999L)));
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Soco Id");
     }
-    @And("TC0111 Mengisi Field Nama Lengkap Nasabah")
-    public void tc0111_mengisi_field_nama_lengkap_nasabah(){
+    @And("^TC0111 Mengisi Field (.*) Nama Lengkap Nasabah")
+    public void tc0111_mengisi_field_nama_lengkap_nasabah(String namaLengkap){
         scRegisterPage.getTxtNamaLengkapNasabah().sendKeys(GlobalFunction.getDataGenerator().dataNamaLengkap());
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Nama Lengkap Nasabah");
     }
-    @And("TC0111 Mengisi Field Nomor Handphone Yang Terdaftar Di Bca")
-    public void tc0111_mengisi_field_nomor_handphone_yang_terdaftar_di_bca(){
+    @And("^TC0111 Mengisi Field  (.*) Nomor Handphone Yang Terdaftar Di Bca")
+    public void tc0111_mengisi_field_nomor_handphone_yang_terdaftar_di_bca(double nohp){
         scRegisterPage.getTextNomorHPTerdaftarDiBCA().sendKeys(GlobalFunction.getDataGenerator().dataNoHp());
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Nomor Handphone Yang Terdaftar Di Bca");
     }
-    @And("TC0111 Mengisi Field Nomor Rekening Bca")
-    public void tc0111_mengisi_field_nomor_rekening_bca(){
+    @And("^TC0111 Mengisi Field (.*) Nomor Rekening Bca")
+    public void tc0111_mengisi_field_nomor_rekening_bca(Object norek){
         scRegisterPage.getTextNoRekBCA().sendKeys(String.valueOf(random.nextLong(1000000000L,9999999999L)));
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Nomor Rekening Bca");
     }
@@ -120,13 +120,18 @@ public class InputRegisterPositif {
         s.selectByIndex(0);
         extentTest.log(LogStatus.PASS, "TC0111 Memilih Opsi My Bca");
     }
-    @And("TC0111 Mengisi Field Nominal Transaksi")
-    public void tc0111_mengisi_field_nominal_transaksi(){
+    @And("^TC0111 Mengisi Field  (.*) Nominal Transaksi")
+    public void tc0111_mengisi_field_nominal_transaksi(String nominaltrx){
+        //start number 100
+        //intStart = 100;
+        System.out.println(LoginPositif.strEstafet);
         scRegisterPage.getTxtNominalTransaksi().sendKeys(String.valueOf(random.nextInt(300000,999999)));
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Nominal Transaksi");
     }
     @And("TC0111 Mengisi Field Tanggal Transaksi")
     public void tc0111_mengisi_field_tanggal_transaksi(){
+        // proses intStart 100+07777
+        //10007777
         scRegisterPage.getDateTransaksi().sendKeys(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Tanggal Transaksi");
     }
@@ -136,26 +141,31 @@ public class InputRegisterPositif {
         s.selectByIndex(1);
         extentTest.log(LogStatus.PASS, "TC0111 Pilih Nama Merchant");
     }
+    
     @And("TC0111 Mengisi Field Rrn")
-    public void tc0111_mengisi_field_rrn(){
+    public void tc0111_mengisi_field_rrn(Object rrn){
         scRegisterPage.getTextNoRekBCA().sendKeys(String.valueOf(random.nextLong(100000000000L,999999999999L)));
         extentTest.log(LogStatus.PASS, "TC0111 Mengisi Field Rrn");
     }
+
     @And("TC0111 Upload Foto Bukti Transaksi1")
     public void tc0111_upload_foto_bukti_transaksi1(){
         scRegisterPage.getUploadFotoBuktiTransaksi1().sendKeys(GlobalFunction.getFilePathInResources("\\data\\gambar-180.jpg"));
         extentTest.log(LogStatus.PASS, "TC0111 Upload Foto Bukti Transaksi1");
     }
+
     @And("TC0111 Upload Foto Bukti Transaksi2")
     public void tc0111_upload_foto_bukti_transaksi2(){
         scRegisterPage.getUploadFotoBuktiTransaksi2().sendKeys(GlobalFunction.getFilePathInResources("\\data\\gambar-awal.jpg"));
         extentTest.log(LogStatus.PASS, "TC0111 Upload Foto Bukti Transaksi2");
     }
+
     @And("TC0111 Upload Foto Bukti Transaksi3")
     public void tc0111_upload_foto_bukti_transaksi3(){
         scRegisterPage.getUploadFotoBuktiTransaksi3().sendKeys(GlobalFunction.getFilePathInResources("\\data\\gambar-180.jpg"));
         extentTest.log(LogStatus.PASS, "TC0111 Upload Foto Bukti Transaksi3");
     }
+
     @And("TC0111 Menekan Tombol Submit Data")
     public void tc0111_menekan_tombol_submit_data(){
         scRegisterPage.getBtnSubmit().click();

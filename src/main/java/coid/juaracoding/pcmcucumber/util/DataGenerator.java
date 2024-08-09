@@ -26,7 +26,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$").matcher(email);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Email SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Email SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -56,7 +56,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^(0|62|\\+62)\\d{9,15}$").matcher(noHp);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA No HP SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA No HP SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -77,7 +77,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-z\\.?]{7,15}$").matcher(usrName);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Username SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Username SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -98,7 +98,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-zA-Z\\s?]{7,15}$").matcher(namaDepan);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Depan SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Depan SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -119,7 +119,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-zA-Z\\s?]{7,15}$").matcher(namaTengah);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Tengah SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Tengah SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -140,7 +140,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-zA-Z]{7,15}$").matcher(namaBelakang);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Belakang SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Belakang SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -161,7 +161,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[a-zA-Z\\s?]{6,45}$").matcher(namaLengkap);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Lengkap SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Nama Lengkap SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -206,7 +206,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^\\d{4}-\\d{2}-\\d{2}$").matcher(tglLahir);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Tanggal Lahir SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Tanggal Lahir SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;
@@ -227,7 +227,7 @@ public class DataGenerator {
                 matcher = Pattern.compile("^[\\w\\s\\.?\\,?]{40,255}$").matcher(alamat);
                 isValid = matcher.find();
                 if(intLoop==250){
-                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Alamat SEBANYAK 15 KALI DAN GAGAL !!");
+                    System.out.println("SUDAH MENCOBA MEMBUAT DATA Alamat SEBANYAK 250 KALI DAN GAGAL !!");
                     System.exit(1);
                 }
                 intLoop++;

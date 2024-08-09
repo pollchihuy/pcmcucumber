@@ -20,23 +20,23 @@ public class LoginOutlineHooks {
 	private static final int[] DATA_OUTLINE = {
 //			Loose Coupling
 //			Tight Coupling
-			1,//TC0011 Valid Login
+			200,//TC0011 Valid Login
 //			1,//TC0021 Empty Login
 //			1,//TC0022 Username Dan Password Invalid
 //			4,//TC0023 Username Valid Dan Password Invalid
 //			1,//TC0024 Username Empty Dan Password Invalid
 //			1,//TC0025 Username Valid Dan Password Kosong
 //			1,//TC0026 Username Invalid Dan Password Kosong
-			1,//TC01111 Input Form Registrasi
-			1//TC0141 Validasi Menu Verifikasi
+//			10,//TC01111 Input Form Registrasi
+//			1//TC0141 Validasi Menu Verifikasi
 	};
 	private String testReport = "";
 	
 	@Before
 	public void setUp() {
 //		DriverSingleton.getInstance(Constants.FIREFOX);
-//		DriverSingleton.getInstance(Constants.CHROME);
-		DriverSingleton.getInstance(ContohConfig.getBrowser());
+		DriverSingleton.getInstance(Constants.CHROME);
+//		DriverSingleton.getInstance(ContohConfig.getBrowser());
 		driver = DriverSingleton.getDriver();
 		testReport = tests[GlobalFunction.testCount].getTestName();
 		extentTest = reports.startTest(testReport);

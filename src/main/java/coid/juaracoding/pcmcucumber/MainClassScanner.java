@@ -1,20 +1,12 @@
 package coid.juaracoding.pcmcucumber;
 
 import coid.juaracoding.pcmcucumber.config.ContohConfig;
+import org.testng.Assert;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-/*
-IntelliJ IDEA 2024.1.4 (Ultimate Edition)
-Build #IU-241.18034.62, built on June 21, 2024
-@Author pollc a.k.a. Paul Christian
-Java Developer
-Created on Fri 21:04
-@Last Modified Fri 21:04
-Version 1.0
-*/
 public class MainClassScanner {
 
     public static void main(String[] args) {
@@ -51,6 +43,3 @@ public class MainClassScanner {
         System.out.println("Password : "+ContohConfig.getPassword());
     }
 }
-//SIT
-//UAT ->
-//PRODUCTION

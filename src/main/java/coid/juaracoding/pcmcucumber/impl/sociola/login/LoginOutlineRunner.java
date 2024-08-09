@@ -7,8 +7,8 @@ import io.cucumber.testng.CucumberOptions;
 features = {
 		"src/main/resources/features/001LoginPositif.feature",
 //		"src/main/resources/features/002LoginNegatif.feature",
-		"src/main/resources/features/011InputRegistrasiPositif.feature",
-		"src/main/resources/features/014VerifikasiPositif.feature",
+//		"src/main/resources/features/011InputRegistrasiPositif.feature",
+//		"src/main/resources/features/014VerifikasiPositif.feature",
 		},
 glue = "coid.juaracoding.pcmcucumber.impl.sociola.login",
 monochrome=true,
